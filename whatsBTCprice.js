@@ -8,7 +8,7 @@ port = 3000;
 
 app.get("/", (request, response) => {
   rp(url)
-    .then(function (html) {
+    .then((html) => {
       response.send($(".price-large", html).text());
     })
     .catch(function (err) {
