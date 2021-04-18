@@ -5,10 +5,13 @@ ENV TZ=Asia/Singapore
 
 RUN apt-get update
 RUN apt-get install -y nodejs npm
+RUN cd /home
+RUN mkdir bitcoinprice
+RUN cd bitcoinprice
+RUN npm init
 RUN npm install request request-promise cheerio express --save
 RUN useradd -ms /bin/bash user
-RUN cd ~
-RUN mkdir bitcoinprice
+
 COPY whatsBTCprice.js /bitcoinprice
 USER user
 WORKDIR /home/bitcoinprice
