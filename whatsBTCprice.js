@@ -18,7 +18,7 @@ app.get("/btc", (request, response) => {
 });
 
 app.get("/eth", (request, response) => {
-  url - "https://www.coindesk.com/price/ethereum";
+  url = "https://www.coindesk.com/price/ethereum";
   rp(url)
     .then((html) => {
       response.send($(".price-large", html).text());
