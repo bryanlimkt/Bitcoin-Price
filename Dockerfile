@@ -5,7 +5,7 @@ ENV TZ=Asia/Singapore
 
 RUN apt-get update
 RUN apt-get install -y nodejs npm
-RUN npm install request-promise cheerio express --save
+RUN npm install request request-promise cheerio express --save
 RUN useradd -ms /bin/bash user
 RUN cd ~
 RUN mkdir bitcoinprice
