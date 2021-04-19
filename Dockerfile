@@ -10,7 +10,7 @@ ENV USER root
 RUN npm install express request request-promise cheerio --save
 RUN useradd -ms /bin/bash user
 COPY whatsBTCprice.js /home/user/whatsBTCprice.js
-# COPY start.sh /home/user/start.sh
+COPY start.sh /home/user/start.sh
 # RUN chmod a+x /home/user/start.sh
 USER user
 WORKDIR /home/user
@@ -33,5 +33,5 @@ WORKDIR /home/user
 # USER user
 # WORKDIR /home/bitcoinprice
 
-CMD ["node","/home/bitcoinprice/whatsBTCprice.js"]
+#CMD ["node","/home/bitcoinprice/whatsBTCprice.js"]
 
