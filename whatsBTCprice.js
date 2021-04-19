@@ -7,12 +7,7 @@ const app = express();
 port = 3000;
 
 app.get("/", (request, response) => {
-    .then(() => {
-      response.send("This is version 1.1");
-    })
-    .catch(function (err) {
-      //handle error
-    });
+  response.send("This is version 1.1");
 });
 
 app.get("/btc", (request, response) => {
