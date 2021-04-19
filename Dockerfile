@@ -14,6 +14,7 @@ COPY start.sh /home/user/start.sh
 RUN chmod a+x /home/user/start.sh
 USER user
 WORKDIR /home/user
+CMD ["sh","/home/user/start.sh"]
 # FROM ubuntu:18.04
 # MAINTAINER Bryan Lim
 # EXPOSE 8080
