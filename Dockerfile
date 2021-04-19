@@ -11,7 +11,7 @@ RUN npm install express request request-promise cheerio --save
 RUN useradd -ms /bin/bash user
 COPY whatsBTCprice.js /home/user/whatsBTCprice.js
 COPY start.sh /home/user/start.sh
-# RUN chmod a+x /home/user/start.sh
+RUN chmod a+x /home/user/start.sh
 USER user
 WORKDIR /home/user
 # FROM ubuntu:18.04
