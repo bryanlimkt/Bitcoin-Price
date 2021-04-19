@@ -33,5 +33,5 @@ WORKDIR /home/user
 # USER user
 # WORKDIR /home/bitcoinprice
 
-# CMD ["node","/home/bitcoinprice/whatsBTCprice.js"]
+CMD ["node","/home/bitcoinprice/whatsBTCprice.js"]
 

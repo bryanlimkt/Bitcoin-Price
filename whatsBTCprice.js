@@ -6,6 +6,10 @@ var url = "";
 const app = express();
 port = 8080;
 
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
+
 app.get("/", (request, response) => {
   response.send("This is version 1.1");
 });
@@ -41,7 +45,4 @@ app.get("/xrp", (request, response) => {
     .catch(function (err) {
       //handle error
     });
-});
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
 });
