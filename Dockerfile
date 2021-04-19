@@ -1,12 +1,12 @@
 FROM ubuntu:18.04
 MAINTAINER Bryan Lim
 EXPOSE 8080
-ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=Asia/Singapore
+# ARG DEBIAN_FRONTEND=noninteractive
+# ENV TZ=Asia/Singapore
 
 RUN apt-get update
 RUN apt-get install -y nodejs npm
-ENV USER root
+# ENV USER root
 RUN npm install express request request-promise cheerio
 # RUN useradd -ms /bin/bash user
 COPY whatsBTCprice.js /home/user/whatsBTCprice.js
