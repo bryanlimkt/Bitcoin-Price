@@ -1,2 +1,2 @@
 cd /home/user
-node app.js
+node whatBTCprice.js
