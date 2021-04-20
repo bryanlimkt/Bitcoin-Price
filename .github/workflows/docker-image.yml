@@ -30,9 +30,8 @@ jobs:
           docker build . --file Dockerfile --tag btcprice:$VERSION_NUM
     - name: Push to Docker Hub
       run: |
-        echo $VERSION_NUM
-
-        docker tag btcprice bryanlimkt/btcprice:$VERSION_NUM
-        docker tag btcprice bryanlimkt/btcprice:latest
-        docker push btcprice:$VERSION_NUM
-        docker push btcprice:latest
+        docker tag $IMAGE_NAME bryanlimkt/$IMAGE_NAME:2.$VERSION_NUM
+        docker tag $IMAGE_NAME bryanlimkt/$IMAGE_NAME:latest
+        
+        docker push bryanlimkt/$IMAGE_NAME:2.$VERSION_NUM
+        docker push bryanlimkt/$IMAGE_NAME:latest
