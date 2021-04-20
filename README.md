@@ -1,6 +1,6 @@
 # Bitcoin-Price
 
-#Introduction
+# Introduction
 Cryptocurrencies, are digital means of exchange that uses cryptography for security. 
 
 They are at present very volatile as a result of several factors:
