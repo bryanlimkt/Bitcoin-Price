@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: btcprice
   DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-  VERSION_NUM: ${{github.run_number - 41}}
+  VERSION_NUM: ${{github.run_number}} - 41
 
 jobs:
 
