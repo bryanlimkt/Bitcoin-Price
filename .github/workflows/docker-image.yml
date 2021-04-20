@@ -26,12 +26,12 @@ jobs:
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
-          docker build . --file Dockerfile --tag btcprice:${{github_run_id}}
+          docker build . --file Dockerfile --tag btcprice:${{github.run.id}}
     - name: Push to Docker Hub
       run: |
         echo ${{github_run_id}}
 
-        docker tag btcprice bryanlimkt/btcprice:${{github_run_id}}
+        docker tag btcprice bryanlimkt/btcprice:${{github.run.id}}
         docker tag myhello bryanlimkt/btcprice:latest
-        docker push btcprice:${{github_run_id}}
+        docker push btcprice:${{github.run.id}}
         docker push btcprice:latest
