@@ -22,7 +22,7 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
-        echo ${{github_run_id}}
+        echo ${{github.run.id}}
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
