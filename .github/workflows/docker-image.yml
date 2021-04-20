@@ -22,24 +22,16 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
+        echo ${{github_run_id}}
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
-          docker build . --file Dockerfile --tag btcprice:$(date +%s)
+          docker build . --file Dockerfile --tag btcprice:${{github_run_id}}
     - name: Push to Docker Hub
       run: |
-        
-        # Strip git ref prefix from version
-        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+        echo ${{github_run_id}}
 
-        # Strip "v" prefix from tag name
-        [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-
-        # Use Docker `latest` tag convention
-        [ "$VERSION" == "main" ] && VERSION=latest
-
-        echo IMAGE_ID=btcprice
-        echo VERSION=$VERSION
-
-        docker tag $IMAGE_NAME btcprice:$VERSION
-        docker push btcprice:$VERSION
+        docker tag btcprice bryanlimkt/btcprice:${{github_run_id}}
+        docker tag myhello bryanlimkt/btcprice:latest
+        docker push btcprice:${{github_run_id}}
+        docker push btcprice:latest
