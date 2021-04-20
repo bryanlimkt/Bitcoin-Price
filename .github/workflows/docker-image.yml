@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 env:
   IMAGE_NAME: btcprice
-        
+  DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
 jobs:
 
@@ -19,9 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Log in to Docker Hub 
-      env:
-        DOCKER_USERNAME: ${{DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{DOCKER_PASSWORD}}
+
       run: | 
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
