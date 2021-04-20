@@ -29,7 +29,7 @@ jobs:
           docker build . --file Dockerfile --tag btcprice:${{github.run.id}}
     - name: Push to Docker Hub
       run: |
-        echo ${{github_run_id}}
+        echo ${{github.run.id}}
 
         docker tag btcprice bryanlimkt/btcprice:${{github.run.id}}
         docker tag myhello bryanlimkt/btcprice:latest
