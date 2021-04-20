@@ -5,9 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-env:
-  DOCKER_USERNAME: ${{DOCKER_USERNAME}}
-  DOCKER_PASSWORD: ${{DOCKER_PASSWORD}}
+
   IMAGE_NAME: btcprice
 
         
@@ -21,31 +19,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    -name: Log in to Docker Hub
-    
-      run: |
+    - name: Log in to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{DOCKER_PASSWORD}}
+      run: | 
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag btcprice:$(date +%s)
-    -name: Push to Docker Hub
-      name: Push image
-        run: |
-          IMAGE_ID=hub.docker.com/repository/docker/bryanlimkt/btcprice
+    - name: Log in to Docker Hub
+      run: |
+          docker build . --file Dockerfile --tag btcprice:$(date +%s)
+    - name: Push to Docker Hub
+      run: |
+        IMAGE_ID=hub.docker.com/repository/docker/bryanlimkt/btcprice
 
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+        # Change all uppercase to lowercase
+        IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
 
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+        # Strip git ref prefix from version
+        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
 
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+        # Strip "v" prefix from tag name
+        [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
 
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "main" ] && VERSION=latest
+        # Use Docker `latest` tag convention
+        [ "$VERSION" == "main" ] && VERSION=latest
 
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
+        echo IMAGE_ID=$IMAGE_ID
+        echo VERSION=$VERSION
 
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+        docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+        docker push $IMAGE_ID:$VERSION
