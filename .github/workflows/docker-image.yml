@@ -22,7 +22,7 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
-        docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
           docker build . --file Dockerfile --tag btcprice:$(date +%s)
