@@ -28,11 +28,7 @@ jobs:
           docker build . --file Dockerfile --tag btcprice:$(date +%s)
     - name: Push to Docker Hub
       run: |
-        IMAGE_ID=hub.docker.com/repository/docker/bryanlimkt/btcprice
-
-        # Change all uppercase to lowercase
-        IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-
+        
         # Strip git ref prefix from version
         VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
 
@@ -42,8 +38,8 @@ jobs:
         # Use Docker `latest` tag convention
         [ "$VERSION" == "main" ] && VERSION=latest
 
-        echo IMAGE_ID=$IMAGE_ID
+        echo IMAGE_ID=btcprice
         echo VERSION=$VERSION
 
-        docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-        docker push $IMAGE_ID:$VERSION
+        docker tag $IMAGE_NAME btcprice:$VERSION
+        docker push btcprice:$VERSION
