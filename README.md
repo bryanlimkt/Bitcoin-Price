@@ -31,11 +31,15 @@ Create a comtainer by typing the following command into your terminal
 `docker run -d -p 8080:8080 bryanlimkt/btcprice`
 
 Obtain inforamtion using curl commands
+
 Bitcoin Price (USD):
+
 `curl -i http://localhost:8080/btc`
 
 Ethereum Price (USD):
+
 `curl -i http://localhost:8080/eth`
 
 XRP Price (USD):
+
 `curl -i http://localhost:8080/xrp`
