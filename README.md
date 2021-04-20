@@ -8,3 +8,4 @@ Workflow Goal:
  * Telegram message after every github push
     * Webhooks
  * Automate github add,commit and push
+    * Done using .bat file - Need to run only one command instead of three.
