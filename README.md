@@ -2,8 +2,8 @@
 
 Workflow Goal:
  * Dockerhub push following every github push
- * * Webhooks
- * * github actions
+    * Webhooks
+    * github actions
  * * Dockerhub automated build
  * Telegram message after every github push
  * * Webhooks
