@@ -27,9 +27,11 @@ Goal:
 
 # Run Application
 Create a comtainer by typing the following command into your terminal
-docker run -d -p 8080:8080 bryanlimkt/btcprice
+
+`docker run -d -p 8080:8080 bryanlimkt/btcprice`
 
 Obtain inforamtion using curl commands
-curl -i http://localhost:8080/btc
-curl -i http://localhost:8080/eth
-curl -i http://localhost:8080/xrp
+
+`curl -i http://localhost:8080/btc`
+`curl -i http://localhost:8080/eth`
+`curl -i http://localhost:8080/xrp`
