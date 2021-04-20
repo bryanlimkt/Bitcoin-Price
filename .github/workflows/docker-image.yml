@@ -9,6 +9,7 @@ env:
   IMAGE_NAME: btcprice
   DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  RUN_NUM: ${{github.run.number}}
 
 jobs:
 
@@ -22,16 +23,16 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
-        echo run number is ${{github.run.number}}
+        echo run number is $RUN_NUM
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
-          docker build . --file Dockerfile --tag btcprice:${{github.run.number}}
+          docker build . --file Dockerfile --tag btcprice:$RUN_NUM
     - name: Push to Docker Hub
       run: |
-        echo ${{github.run.number}}
+        echo $RUN_NUM
 
-        docker tag btcprice bryanlimkt/btcprice:${{github.run.number}}
+        docker tag btcprice bryanlimkt/btcprice:$RUN_NUM
         docker tag myhello bryanlimkt/btcprice:latest
-        docker push btcprice:${{github.run.number}}
+        docker push btcprice:$RUN_NUM
         docker push btcprice:latest
