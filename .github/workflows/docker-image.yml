@@ -20,14 +20,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Build Docker Image
+      run: |
+          docker build . --file Dockerfile --tag btcprice
     - name: Log in to Docker Hub 
 
       run: | 
-        echo run number is $VERSION_NUM
-        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: Log in to Docker Hub
-      run: |
-          docker build . --file Dockerfile --tag btcprice:$VERSION_NUM
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
     - name: Push to Docker Hub
       run: |
         docker tag $IMAGE_NAME bryanlimkt/$IMAGE_NAME:2.$VERSION_NUM
