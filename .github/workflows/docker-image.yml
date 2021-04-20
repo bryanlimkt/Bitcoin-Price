@@ -22,16 +22,16 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
-        echo ${{github.run.id}}
+        echo run number is ${{github.run.number}}
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       run: |
-          docker build . --file Dockerfile --tag btcprice:${{github.run.id}}
+          docker build . --file Dockerfile --tag btcprice:${{github.run.number}}
     - name: Push to Docker Hub
       run: |
-        echo ${{github.run.id}}
+        echo ${{github.run.number}}
 
-        docker tag btcprice bryanlimkt/btcprice:${{github.run.id}}
+        docker tag btcprice bryanlimkt/btcprice:${{github.run.number}}
         docker tag myhello bryanlimkt/btcprice:latest
-        docker push btcprice:${{github.run.id}}
+        docker push btcprice:${{github.run.number}}
         docker push btcprice:latest
