@@ -27,6 +27,7 @@ jobs:
     - name: Log in to Docker Hub 
 
       run: | 
+        echo $DOCKER_USERNAME
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
     - name: Push to Docker Hub
       run: |
