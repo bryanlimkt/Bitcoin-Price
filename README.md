@@ -1,5 +1,16 @@
 # Bitcoin-Price
 
+<div class="panel panel-info">
+**Update**
+{: .panel-heading}
+<div class="panel-body">
+
+Be sure to check out the 'telegram' branch. You can use the telegram bot to retreive Bitcoin, Ethereum and XRP prices!
+
+</div>
+</div>
+
+
 ## Introduction
 
 Cryptocurrencies, are digital means of exchange that uses cryptography for security.
