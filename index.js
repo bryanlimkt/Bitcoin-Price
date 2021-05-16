@@ -1,6 +1,6 @@
 var TelegramBot = require("node-telegram-bot-api"),
   //encrypt the bot_id
-  bot = new TelegramBot("1798178586:AAFaiIXTmS1BGgB32l1_9FRVxrLJ9EVm72k", {
+  bot = new TelegramBot("{{secrets.TELEGRAM_BTC_CHATBOT_TOKEN}}", {
     polling: true,
   });
 
