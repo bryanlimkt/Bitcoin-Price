@@ -1,7 +1,3 @@
->**Update**
->
->Be sure to check out the 'telegram' branch. You can use the telegram bot to retreive Bitcoin, Ethereum and XRP prices!
-
 # Bitcoin-Price
 
 ## Introduction
