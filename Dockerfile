@@ -8,7 +8,7 @@ RUN apt-get install -y nodejs npm
 # ENV USER root
 RUN npm install express request request-promise cheerio
 # RUN useradd -ms /bin/bash user
-COPY whatsBTCprice.js /home/user/telegram-bot.js
+COPY telegram-bot.js /home/user/telegram-bot.js
 #COPY start.sh /home/user/start.sh
 #RUN chmod a+x /home/user/start.sh
 # USER user
