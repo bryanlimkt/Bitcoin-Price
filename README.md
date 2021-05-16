@@ -1,3 +1,4 @@
+{::options parse_block_html="true" /}.
 # Bitcoin-Price
 
 <div class="panel panel-info">
