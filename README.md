@@ -1,16 +1,8 @@
-{::options parse_block_html="true" /}.
+
 # Bitcoin-Price
 
-<div class="panel panel-info">
-**Update**
-{: .panel-heading}
-<div class="panel-body">
-
-Be sure to check out the 'telegram' branch. You can use the telegram bot to retreive Bitcoin, Ethereum and XRP prices!
-
-</div>
-</div>
-
+>**Update**
+>Be sure to check out the 'telegram' branch. You can use the telegram bot to retreive Bitcoin, Ethereum and XRP prices!
 
 ## Introduction
 
