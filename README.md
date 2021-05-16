@@ -33,7 +33,7 @@ Goal:
 
 - Create a comtainer by typing the following command into your terminal
 
-  `docker run -d -p bryanlimkt/btcprice-telegram-bot`
+  `docker run -d bryanlimkt/btcprice-telegram-bot`
   
  - Visit the following Telegram Channel
   `@mybtcethxrpbot`
