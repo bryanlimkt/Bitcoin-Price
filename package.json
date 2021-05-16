@@ -1,0 +1,22 @@
+{
+  "name": "bitcoin-price",
+  "version": "1.0.0",
+  "description": "Cryptocurrencies, are digital means of exchange that uses cryptography for security.",
+  "main": "whatsBTCprice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanlimkt/Bitcoin-Price.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryanlimkt/Bitcoin-Price/issues"
+  },
+  "homepage": "https://github.com/bryanlimkt/Bitcoin-Price#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.52.0"
+  }
+}
