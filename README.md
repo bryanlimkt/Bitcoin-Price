@@ -33,18 +33,21 @@ Goal:
 
 - Create a comtainer by typing the following command into your terminal
 
-  `docker run -d -p 8080:8080 bryanlimkt/btcprice`
+  `docker run -d -p bryanlimkt/btcprice-telegram-bot`
+  
+ - Visit the following Telegram Channel
+  `@mybtcethxrpbot`
 
-- Obtain inforamtion using curl commands
+- Obtain inforamtion using the following commands in Telegram
 
   Bitcoin Price (USD):
 
-  `curl -i http://localhost:8080/btc`
+  `/btc`
 
   Ethereum Price (USD):
 
-  `curl -i http://localhost:8080/eth`
+  `/eth`
 
   XRP Price (USD):
 
-  `curl -i http://localhost:8080/xrp`
+  `/xrp`
