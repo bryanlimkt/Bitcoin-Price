@@ -4,7 +4,7 @@ const express = require("express");
 
 var url = "";
 const app = express();
-port = 8080;
+let port = 8080;
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
